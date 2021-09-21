@@ -1,0 +1,13 @@
+body{
+    font-style:italic;
+    font-family:'Times New Roman', Times, serif;
+}
+.content {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.table {
+    margin-left: auto;
+    margin-right: auto;
+}
