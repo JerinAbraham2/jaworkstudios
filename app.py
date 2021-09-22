@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
+
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pydatabase.db'
@@ -67,6 +68,13 @@ def update(id):
 if __name__ == "__main__":
     app.run(debug=False)
 
+@app.before_request
+def before_request():
+    if 'DYNO' in os.environ:
+        if request.url.startswith('http://'):
+            url = request.url.replace('http://', 'https://', 1)
+            code = 301
+            return redirect(url, code=code)
 
 
 #web app: source /home/tobidendom/Documents/py/pyflask/env/bin/activate
