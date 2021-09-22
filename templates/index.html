@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="tech.html" class="navbar__links">
+                    <a href="/" class="navbar__links">
                     Tech
                     </a>
                 </li>
@@ -73,27 +73,27 @@
     <div class="services" id="services">
         <h1>Our services</h1>
         <div class="services__wrapper">
-            <div class="services__card">
+            <a class="services__card">
                 <h2>Custom JAWORKS projects</h2>
                 <p>Soon to be working on a JA-AI (or Jaworks AI for longer)</p>
                 <div class="services__btn"><button>Get started</button></div>
-            </div>
-            <div class="services__card">
+            </a>
+            <a class="services__card" href="{{ url_for('tasklist') }}">
                 <h2>Useful utilities</h2>
                 <p>Many projects</p>
                 <div class="services__btn"><button>Get started</button></div>
-            </div>
-            <div class="services__card">
+            </a>
+            <a class="services__card">
                 <h2>Fun games</h2>
                 <p>Explore the created games</p>
                 <div class="services__btn"><button>Get started</button></div>
-            </div>
-            <div class="services__card">
+            </a>
+            <a class="services__card">
                 <h2>Graphical user interfaces</h2>
                 <p>Available on windows, mac and linux</p>
                 <!-- you put an image tag here if you want to replace with images or somewhere -->
                 <div class="services__btn"><button>Get started</button></div>
-            </div>
+            </a>
         </div>
     </div>
 

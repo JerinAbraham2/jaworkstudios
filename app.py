@@ -21,18 +21,22 @@ class Todo(db.Model):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    return render_template('index.html')
+
+@app.route('/tasklist', methods=['GET', 'POST'])
+def tasklist():
     if request.method == 'POST':
         task_content = request.form['content']
         new_task = Todo(content=task_content)
         try:
             db.session.add(new_task)
             db.session.commit()
-            return redirect('/')
+            return redirect('/tasklist')
         except:
             return 'task was not added bro'
     else:
         tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template('index.html', tasks=tasks)
+        return render_template('tasklist.html', tasks=tasks)
 
 @app.route('/delete/<int:id>')
 def delete(id):
@@ -41,7 +45,7 @@ def delete(id):
     try:
         db.session.delete(task_to_delete)
         db.session.commit()
-        return redirect('/')
+        return redirect('/tasklist')
     except:
         return 'hey bro '
 
@@ -53,12 +57,11 @@ def update(id):
 
         try:
             db.session.commit()
-            return redirect('/')
+            return redirect('/tasklist')
         except:
             return 'redirect'
     else:
         return render_template('update.html', task=task)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
@@ -82,4 +85,8 @@ if __name__ == "__main__":
     # <!-- you cant have comments in the pages that inherit the base.html -->
 
 
-#updating website git 
+#updating website git
+#heroku login (or login heroku?)
+#git add .
+#git commit -m "comment here about what your changing"
+#git push heroku master
