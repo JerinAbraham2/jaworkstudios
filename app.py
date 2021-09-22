@@ -1,10 +1,10 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from flask_talisman import talisman
+from flask_talisman import Talisman
 from datetime import datetime
 
 app = Flask(__name__)
-talisman(app)
+Talisman(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pydatabase.db'
 db = SQLAlchemy(app)
 
