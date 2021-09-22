@@ -3,7 +3,6 @@ from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pydatabase.db'
@@ -76,7 +75,7 @@ def update(id):
         return render_template('update.html', task=task)
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
 
 
 
