@@ -509,14 +509,13 @@ slate gray: #708090
     align-items: center;
     height: 100%;
     padding: 10rem 0;
-
 }
-
 .services h1 {
     background-color: #131313;
     background-image: linear-gradient(to right, white 0%, #FFA500 50%, #FF4500 100%);
     background-size: 100%;
-    font-size: 5rem;
+    text-align: center;
+    font-size: 3.5rem;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -539,6 +538,7 @@ slate gray: #708090
     flex-direction: column;
     justify-content: center;
     color: white;
+    font-size: large;
     background-image: linear-gradient(to right, white 0%, #FF4500 100%);
     transition: 0.3 ease-in;
     text-decoration: none;
@@ -548,6 +548,7 @@ slate gray: #708090
     background: #1ae5e1;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FF4500, #FFA500, white), ;  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #FF4500, #FFA500, white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 
 }
 
@@ -574,6 +575,14 @@ slate gray: #708090
 
 .services__card h2 {
     text-align: center;
+    background-color: #131313;
+    background-image: linear-gradient(to right, white, white, white, #030303);
+    background-size: 100%;
+    text-align: center;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 }
 
 .services__card p {
