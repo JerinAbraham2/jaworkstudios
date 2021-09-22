@@ -80,3 +80,6 @@ if __name__ == "__main__":
     # cant have comments in the html if you have a base.html <!--you can use this for javascript as well <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"> -->
     # <!-- the above is ginger {} text {{}} and it will take the thing and give the return as a string or something  -->
     # <!-- you cant have comments in the pages that inherit the base.html -->
+
+
+#updating website git 
