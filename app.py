@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -7,6 +8,8 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pydatabase.db'
 db = SQLAlchemy(app)
+
+
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True) #think this is automatic as well
@@ -20,6 +23,15 @@ class Todo(db.Model):
 #go into your env, then type python3 to go into the python shell (this thing: '>>>>')
 #from app import db
 #db.create_all()
+
+@app.before_request
+def before_request():
+    if 'DYNO' in os.environ:
+        if request.url.startswith('http://'):
+            url = request.url.replace('http://', 'https://', 1)
+            code = 301
+            return redirect(url, code=code)
+
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -68,13 +80,6 @@ def update(id):
 if __name__ == "__main__":
     app.run(debug=False)
 
-@app.before_request
-def before_request():
-    if 'DYNO' in os.environ:
-        if request.url.startswith('http://'):
-            url = request.url.replace('http://', 'https://', 1)
-            code = 301
-            return redirect(url, code=code)
 
 
 #web app: source /home/tobidendom/Documents/py/pyflask/env/bin/activate
