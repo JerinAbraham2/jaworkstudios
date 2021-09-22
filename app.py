@@ -1,10 +1,12 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from flask_talisman import Talisman
 from datetime import datetime
+from flask_sslify import SSLify
 
 app = Flask(__name__)
-Talisman(app)
+if 'DYNO' in os.environ: # only trigger SSLify if the app is running on Heroku
+    sslify = SSLify(app)
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pydatabase.db'
 db = SQLAlchemy(app)
 
