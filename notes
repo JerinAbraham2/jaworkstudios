@@ -6,6 +6,12 @@ there are actually two websites: https and http ()
 
 might have to remake procfile and pydatabase and requirements.txt (when you add your new libraries and stuff)
 
+for changes to happen, with m, you need to git commit, push heroku etc. and then run flask again
+
+you can read the notes on the cmd
+
+careful with c+z
+
     font-family: TangoSans;
 
 

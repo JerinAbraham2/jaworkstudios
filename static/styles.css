@@ -251,6 +251,7 @@ slate gray: #708090
 }
 .hero__heading span{
     /* got from uigradients website */
+    font-family: TangoSans;
     background-size: 300px, 300px;
     background: #FFE000;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FF4500, #FFA500);  /* Chrome 10-25, Safari 5.1-6 */
@@ -279,6 +280,9 @@ slate gray: #708090
 }
 
 @media screen and (max-width: 760px) {
+    .hero{
+        padding: 50px 0;
+    }
     .hero__heading{
         font-size: 60px;
     }
@@ -424,6 +428,9 @@ slate gray: #708090
 
 /* Mobile responsiveness */ 
 @media screen and (max-width: 1100px) {
+    .main{
+        padding: 2rem 0;
+    }
     .main__container{
         display: grid;
         grid-template-columns: 1fr;
@@ -465,7 +472,6 @@ slate gray: #708090
     }
 
 }
-
 @media screen and (max-width: 480px) {
     .main__img--card{
         width: 250px;
@@ -547,8 +553,6 @@ slate gray: #708090
     background: #1ae5e1;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FF4500, #FFA500, white), ;  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #FF4500, #FFA500, white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-
 }
 
 .services__card:nth-child(2) {
@@ -616,6 +620,13 @@ slate gray: #708090
 }
 
 @media screen and (max-width: 1300px) {
+    .services{
+        padding: 2rem 0;
+    }
+    .services__card {
+        height: 350px;
+        width: 250px;
+    }
     .services__wrapper{
         grid-template-columns: 1fr 1fr;
     }
