@@ -1,12 +1,13 @@
+#you can do this because website is a python package and when you put a init.py file it becomes a python package
+from website import create_app
+from flask import request, redirect
 import os
-from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 
-app = Flask(__name__)
+app = create_app()
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pydatabase.db'
-db = SQLAlchemy(app)
+if __name__ == '__app__':
+    app.debug(debug=True)
 
 #redirects http:// to https://
 @app.before_request
@@ -16,66 +17,19 @@ def before_request():
             url = request.url.replace('http://', 'https://', 1)
             code = 301
             return redirect(url, code=code)
+#redirects http:// to https://
 
-class Todo(db.Model):
-    id = db.Column(db.Integer, primary_key=True) #think this is automatic as well
-    content = db.Column(db.String(200), nullable=False) 
-    date_created = db.Column(db.DateTime, default=datetime.utcnow) #automatic
 
-    def __repr__(self):
-        return '<Task %r>' % self.id
 
-#activate database (if you change your database stuff maybe trying doing this again)
-#go into your env, then type python3 to go into the python shell (this thing: '>>>>')
-#from app import db
-#db.create_all()
 
-@app.route('/', methods=['POST', 'GET'])
-def index():
-    return render_template('index.html')
 
-@app.route('/tasklist', methods=['GET', 'POST'])
-def tasklist():
-    if request.method == 'POST':
-        task_content = request.form['content']
-        new_task = Todo(content=task_content)
-        try:
-            db.session.add(new_task)
-            db.session.commit()
-            return redirect('/tasklist')
-        except:
-            return 'task was not added bro'
-    else:
-        tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template('tasklist.html', tasks=tasks)
 
-@app.route('/delete/<int:id>')
-def delete(id):
-    task_to_delete = Todo.query.get_or_404(id)
 
-    try:
-        db.session.delete(task_to_delete)
-        db.session.commit()
-        return redirect('/tasklist')
-    except:
-        return 'hey bro '
 
-@app.route('/update/<int:id>', methods=['GET','POST'])
-def update(id):
-    task = Todo.query.get_or_404(id)
-    if request.method == 'POST':
-        task.content = request.form['content']
 
-        try:
-            db.session.commit()
-            return redirect('/tasklist')
-        except:
-            return 'redirect'
-    else:
-        return render_template('update.html', task=task)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
+
 
 
 

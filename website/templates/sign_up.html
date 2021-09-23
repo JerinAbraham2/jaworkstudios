@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Sign up</title> 
+{% endblock %}
+
+{% block main %}
+    <!-- Hero section -->
+    <div class="hero" id="home">
+        <div class="hero__container">
+            <h1 class="hero__heading">This is the 
+                <span>
+                    Sign up
+                </span>
+                page
+            </h1>
+            <p class="hero__description">Unlimited possibilities</p>
+            <button class="main__btn"><a href="#">Explore</a></button>
+        </div>
+    </div>
+    <form method="POST">
+        <h3 align="center">Sign up</h3>
+        <div class="form-group">
+            <label for="email">Email address </label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+        </div>
+    </form>
+{% endblock %}

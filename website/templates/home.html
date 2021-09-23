@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-    <title>JAWORKS Website</title> 
+    <title>Home</title> 
 {% endblock %}
 
 {% block main %}
@@ -14,7 +14,7 @@
                 </span>
             </h1>
             <p class="hero__description">Unlimited possibilities</p>
-            <button class="main__btn"><a href="#">Explore</a></button>
+            <button class="main__btn"><a href="/">Explore</a></button>
         </div>
     </div>
     <!-- About section -->
@@ -27,7 +27,7 @@
                 <h1>What is our goal?</h1>
                 <h2>Useful services and products</h2>
                 <p>Email our CEO to learn more about our services</p>
-                <button class="main__btn"><a href="#">Email CEO</a></button>
+                <button class="main__btn"><a href="/">Email CEO</a></button>
             </div>
         </div>
     </div>
@@ -36,22 +36,22 @@
     <div class="services" id="services">
         <h1>Our services</h1>
         <div class="services__wrapper">
-            <a class="services__card">
+            <a class="services__card" href="/">
                 <h2>Custom JAWORKS projects</h2>
                 <p>Soon to be working on a JA-AI (or Jaworks AI for longer)</p>
                 <div class="services__btn"><button>Get started</button></div>
             </a>
-            <a class="services__card" href="{{ url_for('tasklist') }}">
+            <a class="services__card" href="/tasklist">
                 <h2>Useful utilities</h2>
                 <p>Many projects</p>
                 <div class="services__btn"><button>Get started</button></div>
             </a>
-            <a class="services__card">
+            <a class="services__card" href="/">
                 <h2>Fun games</h2>
                 <p>Explore the created games</p>
                 <div class="services__btn"><button>Get started</button></div>
             </a>
-            <a class="services__card">
+            <a class="services__card" href="/">
                 <h2>Graphical user interfaces</h2>
                 <p>Available on windows, mac and linux</p>
                 <!-- you put an image tag here if you want to replace with images or somewhere -->
@@ -68,7 +68,7 @@
                 <h2>Sign up today</h2>
                 <p>Proud supporters:</p>
                 <p>- butterysmooth</p>
-                <button class="main__btn"><a href="#">Sign up</a></button>
+                <button class="main__btn"><a href="/login">Sign up</a></button>
             </div>
             <div class="main__img--container">
                 <div class="main__img--card" id="card-2"><i class="fas fa-users"></i></div>

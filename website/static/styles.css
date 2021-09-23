@@ -10,6 +10,9 @@ dark orange: #FF8C00
 lawn green #7CFC00
 slate gray: #708090
 */
+
+/* fix the main buttons text decorations */
+
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700;900&display=swap');
 
 @font-face {
@@ -115,15 +118,18 @@ slate gray: #708090
     color:white;
     transition: all 0.3s ease;
     font-weight: bold;
+    text-decoration: none;
 }
 
 
 .button:hover {
+    text-decoration: none;
     background:#1ae5e1;
     transition: all 0.3s ease;
 }
 
 .navbar__links:hover {
+    text-decoration: none;
     color: #FF4500;
     transition: all 0.3s ease;
 }
@@ -369,7 +375,6 @@ slate gray: #708090
     position: relative;
     transition: all 0.35s;
     outline: none;
-
 }
 
 .main__btn a{
@@ -389,15 +394,18 @@ slate gray: #708090
     background: #1ae5e1;
     transition: all 0.35s;
     border-radius: 4px;
+    text-decoration: none;
 }
 
 .main__btn:hover {
     color: white;
+    text-decoration: none;
 
 }
 
 .main__btn:hover:after {
     width: 100%;
+    text-decoration: none;
 }
 
 .main__img--container{
@@ -535,7 +543,7 @@ slate gray: #708090
 }
 
 .services__card {
-    margin: 10px;
+    margin: 15px;
     height: 425px;
     width: 300px;
     border-radius: 4px;
@@ -578,7 +586,7 @@ slate gray: #708090
 .services__card h2 {
     text-align: center;
     background-color: #131313;
-    background-image: linear-gradient(to right, white, white, white, #030303);
+    background-image: linear-gradient(to right, white, white, #030303);
     background-size: 100%;
     text-align: center;
     -webkit-background-clip: text;
@@ -617,6 +625,7 @@ slate gray: #708090
     transform: scale(1.075);
     transition: 0.3s ease-in;
     cursor: pointer;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1300px) {
@@ -701,6 +710,7 @@ slate gray: #708090
 .footer__link--items a:hover {
     color: #C0C0C0;
     transition: 0.3 ease-out;
+    text-decoration: none;
 }
 
 .social__icon--linl {
