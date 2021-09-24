@@ -1,4 +1,4 @@
-    /* Jaworks color palette 
+    /* Jaworks color palette
 white: white
 black: 131313
 orange: #FF4500
@@ -10,9 +10,7 @@ dark orange: #FF8C00
 lawn green #7CFC00
 slate gray: #708090
 */
-
 /* fix the main buttons text decorations */
-
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700;900&display=swap');
 
 @font-face {
@@ -27,19 +25,20 @@ slate gray: #708090
     scroll-behavior: smooth;
     font-weight: bold;
 }
-
+body{
+    overflow: unset;
+}
 .navbar{
-    background:#131313;
-    height:80px;
+    background: #131313;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 2000;
 }
-
 .navbar__container {
     display: flex;
     justify-content: space-between;
@@ -49,7 +48,6 @@ slate gray: #708090
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 50px;
-
 }
 
 #navbar__logo {
@@ -75,7 +73,7 @@ slate gray: #708090
     display: flex;
     align-items: center;
     list-style: none;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .navbar__item {
@@ -87,6 +85,7 @@ slate gray: #708090
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 125px;
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
@@ -101,7 +100,7 @@ slate gray: #708090
     width: 100%;
 }
 
-.button {
+.button a{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -282,7 +281,7 @@ slate gray: #708090
     -moz-text-fill-color: transparent;
 }
 .highlight {
-    border-bottom: 4px solid rgb(132, 0, 255);
+    border-bottom: 4px solid rgb(255, 140, 0);
 }
 
 @media screen and (max-width: 760px) {
@@ -360,7 +359,6 @@ slate gray: #708090
     font-weight: 700;
 
 }
-
 .main__btn {
     font-size: 1.8rem;
     background: #FF4500;
@@ -375,14 +373,25 @@ slate gray: #708090
     position: relative;
     transition: all 0.35s;
     outline: none;
+    text-decoration: none;
+
+    /* person changes */
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    color: white;
 }
 
-.main__btn a{
+/* .main__btn a{
     position: relative;
     z-index: 2;
     color: white;
     text-decoration: none;
-}
+} */
+/* .main__btn a:hover{
+    text-decoration: none;
+    color: white;
+} */
 
 .main__btn:after {
     position: absolute;
@@ -396,11 +405,9 @@ slate gray: #708090
     border-radius: 4px;
     text-decoration: none;
 }
-
 .main__btn:hover {
     color: white;
     text-decoration: none;
-
 }
 
 .main__btn:hover:after {

@@ -9,3 +9,7 @@ views = Blueprint('views', __name__)
 def home():
     return render_template('home.html')
 
+@views.route('/slideshow')
+def slideshow():
+    return render_template('slideshow.html')
+

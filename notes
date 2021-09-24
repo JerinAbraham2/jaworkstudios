@@ -12,11 +12,16 @@ you can read the notes on the cmd
 
 careful with c+z
 
+with url links and linking stylesheets and javascript you need integrity and etc, just search online using the link and type cdn, and look for the cdn in the website you find, 
+with the correct version and the same link
+
+note: because personal css was underneath the bootstrap, it gave it more priority for overflow to be put to unset in your personal css
+if that didnt work I wanted to put a id to prioritise it instead
+
+be VERY careful with copy and paste (make sure to have copyq on)
+
     font-family: TangoSans;
-
-
-
-    /* Jaworks color palette 
+    /* Jaworks color palette
 white: white
 black: 131313
 orange: #FF4500
@@ -28,6 +33,7 @@ dark orange: #FF8C00
 lawn green #7CFC00
 slate gray: #708090
 */
+/* fix the main buttons text decorations */
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700;900&display=swap');
 
 @font-face {
@@ -42,19 +48,20 @@ slate gray: #708090
     scroll-behavior: smooth;
     font-weight: bold;
 }
-
+body{
+    overflow: unset;
+}
 .navbar{
-    background:#131313;
-    height:80px;
+    background: #131313;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 2000;
 }
-
 .navbar__container {
     display: flex;
     justify-content: space-between;
@@ -64,7 +71,6 @@ slate gray: #708090
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 50px;
-
 }
 
 #navbar__logo {
@@ -90,7 +96,7 @@ slate gray: #708090
     display: flex;
     align-items: center;
     list-style: none;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .navbar__item {
@@ -102,6 +108,7 @@ slate gray: #708090
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 125px;
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
@@ -116,7 +123,7 @@ slate gray: #708090
     width: 100%;
 }
 
-.button {
+.button a{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,15 +140,18 @@ slate gray: #708090
     color:white;
     transition: all 0.3s ease;
     font-weight: bold;
+    text-decoration: none;
 }
 
 
 .button:hover {
+    text-decoration: none;
     background:#1ae5e1;
     transition: all 0.3s ease;
 }
 
 .navbar__links:hover {
+    text-decoration: none;
     color: #FF4500;
     transition: all 0.3s ease;
 }
@@ -277,7 +287,7 @@ slate gray: #708090
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 
 
@@ -294,10 +304,13 @@ slate gray: #708090
     -moz-text-fill-color: transparent;
 }
 .highlight {
-    border-bottom: 4px solid rgb(132, 0, 255);
+    border-bottom: 4px solid rgb(255, 140, 0);
 }
 
 @media screen and (max-width: 760px) {
+    .hero{
+        padding: 50px 0;
+    }
     .hero__heading{
         font-size: 60px;
     }
@@ -384,7 +397,6 @@ slate gray: #708090
     position: relative;
     transition: all 0.35s;
     outline: none;
-
 }
 
 .main__btn a{
@@ -392,6 +404,10 @@ slate gray: #708090
     z-index: 2;
     color: white;
     text-decoration: none;
+}
+.main__btn a:hover{
+    text-decoration: none;
+    color: white;
 }
 
 .main__btn:after {
@@ -405,10 +421,8 @@ slate gray: #708090
     transition: all 0.35s;
     border-radius: 4px;
 }
-
 .main__btn:hover {
     color: white;
-
 }
 
 .main__btn:hover:after {
@@ -443,6 +457,9 @@ slate gray: #708090
 
 /* Mobile responsiveness */ 
 @media screen and (max-width: 1100px) {
+    .main{
+        padding: 2rem 0;
+    }
     .main__container{
         display: grid;
         grid-template-columns: 1fr;
@@ -484,7 +501,6 @@ slate gray: #708090
     }
 
 }
-
 @media screen and (max-width: 480px) {
     .main__img--card{
         width: 250px;
@@ -548,7 +564,7 @@ slate gray: #708090
 }
 
 .services__card {
-    margin: 10px;
+    margin: 15px;
     height: 425px;
     width: 300px;
     border-radius: 4px;
@@ -566,8 +582,6 @@ slate gray: #708090
     background: #1ae5e1;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FF4500, #FFA500, white), ;  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #FF4500, #FFA500, white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-
 }
 
 .services__card:nth-child(2) {
@@ -593,7 +607,7 @@ slate gray: #708090
 .services__card h2 {
     text-align: center;
     background-color: #131313;
-    background-image: linear-gradient(to right, white, white, white, #030303);
+    background-image: linear-gradient(to right, white, white, #030303);
     background-size: 100%;
     text-align: center;
     -webkit-background-clip: text;
@@ -632,9 +646,17 @@ slate gray: #708090
     transform: scale(1.075);
     transition: 0.3s ease-in;
     cursor: pointer;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1300px) {
+    .services{
+        padding: 2rem 0;
+    }
+    .services__card {
+        height: 350px;
+        width: 250px;
+    }
     .services__wrapper{
         grid-template-columns: 1fr 1fr;
     }
@@ -709,6 +731,7 @@ slate gray: #708090
 .footer__link--items a:hover {
     color: #C0C0C0;
     transition: 0.3 ease-out;
+    text-decoration: none;
 }
 
 .social__icon--linl {

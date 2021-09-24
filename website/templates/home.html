@@ -4,6 +4,10 @@
     <title>Home</title> 
 {% endblock %}
 
+{% block style %}
+
+{% endblock %}
+
 {% block main %}
     <!-- Hero section -->
     <div class="hero" id="home">
@@ -27,7 +31,7 @@
                 <h1>What is our goal?</h1>
                 <h2>Useful services and products</h2>
                 <p>Email our CEO to learn more about our services</p>
-                <button class="main__btn"><a href="/">Email CEO</a></button>
+                <a class="main__btn" href="/login">Email CEO</a></button>
             </div>
         </div>
     </div>
@@ -36,8 +40,8 @@
     <div class="services" id="services">
         <h1>Our services</h1>
         <div class="services__wrapper">
-            <a class="services__card" href="/">
-                <h2>Custom JAWORKS projects</h2>
+            <a class="services__card" href="/slideshow">
+                <h2>Custom projects</h2>
                 <p>Soon to be working on a JA-AI (or Jaworks AI for longer)</p>
                 <div class="services__btn"><button>Get started</button></div>
             </a>
@@ -75,4 +79,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block script %}
 {% endblock %}
