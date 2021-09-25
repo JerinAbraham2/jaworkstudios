@@ -15,7 +15,7 @@ taskmanager = Blueprint('taskmanager', __name__)
 def tasklist():
     if request.method == 'POST':
         task_content = request.form['content']
-        new_task = Todo(content=task_content)
+        new_task = Todo(content=task_content, user_id=current_user.id)
         try:
             db.session.add(new_task)
             db.session.commit()
@@ -29,19 +29,20 @@ def tasklist():
 @taskmanager.route('/delete/<int:id>')
 def delete(id):
     task_to_delete = Todo.query.get_or_404(id)
-    try:
-        db.session.delete(task_to_delete)
-        db.session.commit()
-        return redirect(url_for('taskmanager.tasklist'))
-    except:
-        return 'hey bro '
+    if task_to_delete == current_user.id:
+        try:
+            db.session.delete(task_to_delete)
+            db.session.commit()
+            return redirect(url_for('taskmanager.tasklist'))
+        except:
+            return 'hey bro '
+    return 'hey bro '
 
 @taskmanager.route('/update/<int:id>', methods=['GET','POST'])
 def update(id):
     task = Todo.query.get_or_404(id)
     if request.method == 'POST':
         task.content = request.form['content']
-
         try:
             db.session.commit()
             return redirect('/tasklist')
