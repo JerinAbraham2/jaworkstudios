@@ -12,7 +12,7 @@ taskmanager = Blueprint('taskmanager', __name__)
 
 @taskmanager.route('/tasklist', methods=['GET', 'POST'])
 @login_required
-def tasklist():
+def tasks():
     if request.method == 'POST':
         task_content = request.form['content']
         new_task = Todo(content=task_content, user_id=current_user.id)
@@ -23,20 +23,20 @@ def tasklist():
         except:
             return 'task was not added bro'
     else:
-        tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template('tasklist.html', tasks=tasks, user=current_user)
+        # tasks = Todo.query.order_by(user_id=current_user.id).all()
+        # tasks=tasks
+        return render_template('tasklist.html', user=current_user)
 
 @taskmanager.route('/delete/<int:id>')
 def delete(id):
     task_to_delete = Todo.query.get_or_404(id)
-    if task_to_delete == current_user.id:
-        try:
-            db.session.delete(task_to_delete)
-            db.session.commit()
-            return redirect(url_for('taskmanager.tasklist'))
-        except:
-            return 'hey bro '
-    return 'hey bro '
+    try:
+        db.session.delete(task_to_delete)
+        db.session.commit()
+        return redirect(url_for('taskmanager.tasks'))
+    except:
+        return redirect(url_for('taskmanager.tasks'))
+
 
 @taskmanager.route('/update/<int:id>', methods=['GET','POST'])
 def update(id):
@@ -64,8 +64,6 @@ def notes():
             new_note = Note(data=note, user_id=current_user.id)
             db.session.add(new_note)
             db.session.commit()
-            flash('note added', category='1')
-
 
     return render_template('notes.html', user=current_user)
 

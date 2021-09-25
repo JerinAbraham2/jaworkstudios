@@ -19,7 +19,6 @@ slate gray: #708090
     src: url(fonts/TangoSans-1Ge1e.ttf);
 }
 *{
-    
     box-sizing: border-box;
     margin:0;
     padding: 0;
@@ -29,6 +28,16 @@ slate gray: #708090
 }
 body{
     overflow-x: hidden;
+}
+#width{
+    width: 900px;
+}
+#color{
+    color:white;
+    text-decoration: none;
+}
+#margin0{
+    margin: 0;
 }
 .navbar{
     background: #131313;
@@ -357,7 +366,13 @@ body{
 .main__content p {
     font-size: 2rem;
     font-weight: 700;
+    margin-bottom: 50px;
 
+}
+#signlistpagepersonal{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0px;
 }
 .main__btn {
     font-size: 1.8rem;

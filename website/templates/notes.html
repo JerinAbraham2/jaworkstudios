@@ -8,21 +8,29 @@
 {% endblock %}
 
 {% block main %}
-<h1 align="center">Notes</h1>
-<ul class="list-group list-group-flush" id="notes">
-    {% for note in user.notes %}
-    <li class="list-group-item">{{ note.data }}</li>
-        <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    {% endfor %}
-<form method="POST">
-    <textarea name="note" id="note" class="form-control"></textarea>
-    <br />
-    <div align="center">
-        <button type="submit" class="btn btn-primary">Add Note</button>
+<div class="hero" id="home">
+    <div class="hero__container">
+        <h1 class="hero__heading">
+            <span>
+                Notes
+            </span>
+        </h1>
+    <ul class="list-group list-group-flush" id="notes" id="width">
+        {% for note in user.notes %}
+        <li class="list-group-item">{{ note.data }}</li>
+            <button id="color" type="button" class="close" onClick="deleteNote({{ note.id }})">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        {% endfor %}
+    <form method="POST" id="width">
+        <textarea name="note" id="note" class="form-control"></textarea>
+        <br />
+        <div align="center">
+            <button type="submit" class="btn btn-primary">Add Note</button>
+        </div>
+    </form>
     </div>
-</form>
+</div>
 {% endblock %}
 
 {% block script %}
