@@ -19,6 +19,7 @@ slate gray: #708090
     src: url(fonts/TangoSans-1Ge1e.ttf);
 }
 *{
+    
     box-sizing: border-box;
     margin:0;
     padding: 0;
@@ -74,7 +75,7 @@ body{
     display: flex;
     align-items: center;
     list-style: none;
-    /* text-align: center; */
+    text-align: center;
 }
 
 .navbar__item {
@@ -135,6 +136,7 @@ body{
 }
 
 @media screen and (max-width: 960px) {
+
     .navbar__container {
     display: flex;
     justify-content: space-between;
@@ -150,12 +152,13 @@ body{
      grid-template-columns: auto;
      margin: 0;
      width: 100%;
-     position: absolute;
+     position:relative;
      top: -1000px;
-     opacity: 0;
+     opacity: 1;
      transition: all 0.5s ease;
      height: 50vh;
      z-index: -1;
+     padding: 0;
  }
 
  .navbar__menu.active {
@@ -163,10 +166,9 @@ body{
      top: 100%;
      opacity: 1;
      transition: all 0.5s ease;
-     z-index: 99;
-     height: 50vh;
+     z-index: 150;
+     height: 60vh;
      font-size: 1.6rem;
-
  }
 
  #navbar__logo {
@@ -179,7 +181,6 @@ body{
      margin: 5px auto;
      transition: all 0.3s ease-in-out;
      background:white;
-
  }
 
  .navbar__item{
@@ -188,7 +189,7 @@ body{
 
  .navbar__links {
      text-align: center;
-     padding-left: 2rem;
+     padding: 2rem;
      width: 100%;
      display: table;
  }
@@ -297,7 +298,6 @@ body{
     }
     .grad1{
         width:250px;
-
     }
 }
 
@@ -505,8 +505,6 @@ body{
         padding: 12px 36px;
         margin: 2.5rem 0;
     }
-
-
 
 }
 
