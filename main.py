@@ -23,7 +23,7 @@ def before_request():
 #
 
 #if you want to deploy I think you need to push in the enviroment (as well as maybe run the main in the enviroment for proper debug (maybe))
-
+#or maybe you don't have to,  (RELY ON GOD)
 
 
 

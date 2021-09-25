@@ -228,6 +228,7 @@ slate gray: #708090
     transform:translateY(-8px) rotate(-45deg);
 }
 }
+
 /* Hero section */
 .hero {
     background: #000000;
@@ -761,14 +762,14 @@ slate gray: #708090
 @media screen and (max-width: 820px) {
     .footer__links {
         padding-top: 2rem;
-
     }
+
     #footer__logo {
         margin-bottom: 2rem;
     }
+
     .website__rights {
         margin-bottom: 2rem;
-
     }
 
     .footer__link--wrapper {

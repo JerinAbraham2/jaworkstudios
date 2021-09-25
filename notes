@@ -20,6 +20,8 @@ if that didnt work I wanted to put a id to prioritise it instead
 
 be VERY careful with copy and paste (make sure to have copyq on)
 
+you often miss things even when copying
+
     font-family: TangoSans;
     /* Jaworks color palette
 white: white
@@ -34,6 +36,9 @@ lawn green #7CFC00
 slate gray: #708090
 */
 /* fix the main buttons text decorations */
+
+get request usually means your getting something example a html ::-webkit-progress-value
+post means your making some kind of change
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700;900&display=swap');
 
 @font-face {

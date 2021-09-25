@@ -28,6 +28,7 @@
                 <span class="bar"></span>
             </div>
             <ul class="navbar__menu">
+                {% if user.is_authenticated %}
                 <li class="navbar__item">
                     <a href="#home" class="navbar__links" id="home-page">
                     Home
@@ -44,13 +45,61 @@
                     </a>
                 </li>
                 <li class="navbar__btn">
-                    <a href="/sign-up" class="button" id="signup">
-                        Sign up
+                    <a href="/logout" class="button" id="logout">
+                        Log out
                     </a>
                 </li>
+                {% else %}
+                <li class="navbar__item">
+                    <a href="#home" class="navbar__links" id="home-page">
+                    Home
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#about" class="navbar__links" id="about-page">
+                    About
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#services" class="navbar__links" id="services-page">
+                    Services
+                    </a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/login" class="button" id="login">
+                        Sign in
+                    </a>
+                </li>
+                {% endif %}
+                
             </ul>
         </div>
     </nav>
+
+
+
+    {% with messages = get_flashed_messages(with_categories=1) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        {% if category == '2' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
     {% block main %}
 
     {% endblock %}

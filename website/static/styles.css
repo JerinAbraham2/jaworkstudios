@@ -26,8 +26,10 @@ slate gray: #708090
     scroll-behavior: smooth;
     font-weight: bold;
 }
+body{
+    overflow-x: hidden;
+}
 .navbar{
-    overflow-x: unset;
     background: #131313;
     height: 80px;
     display: flex;

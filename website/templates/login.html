@@ -8,7 +8,6 @@
 
 {% endblock %}
 
-
 {% block main %}
     <!-- Hero section -->
     <div class="hero" id="home">
@@ -19,10 +18,16 @@
                 </span>
                 page
             </h1>
-            <p class="hero__description">Unlimited possibilities</p>
-            <button class="main__btn"><a href="#">Explore</a></button>
+            <p class="hero__description">Unlimited possibilities {{ text }} </p>
+            <a class="main__btn" href="/sign-up">Sign Up</a>
         </div>
     </div>
+    <!-- {% if boolean == True %}
+    yes its True
+    {% else %}
+    yo -->
+    <!-- endif I think goes in the very end -->
+    <!-- {% endif %} -->
 
     <form method="POST">
 
@@ -41,24 +46,8 @@
         <br />
         <button type="submit" class="btn btn-primary">Login</button>
 
-
     </form>
 {% endblock %}
 
 {% block script %}
-<script
-src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-crossorigin="anonymous"
-></script>
-<script
-src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-crossorigin="anonymous"
-></script>
-<script
-src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-crossorigin="anonymous"
-></script>
 {% endblock %}
