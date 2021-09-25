@@ -6,31 +6,59 @@
 
 {% block style %}
 
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css" 
-integrity="sha512-IMA/QzwVXoMZNIlj542M4aOIoEnpo68zJeGQWV09WuOGpXnls+C+YYtPGP+jSaTjoywZO6WD64RqAdEfbJ1uiQ==" 
-crossorigin="anonymous" 
-referrerpolicy="no-referrer" /> -->
-
-<link rel="stylesheet" href="{{ url_for('static', filename='slideshow.css') }}">
 {% endblock %}
 
 {% block main %}
+
+<div class="hero" id="home">
+  <div class="hero__container">
+      <p class="hero__description">Welcome to the image gallery</p>
+  </div>
+</div>
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
+    <!-- adding bar indicators -->
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
   </ol>
   <div class="carousel-inner">
+    <!-- adding images -->
     <div class="carousel-item active">
-      <img class="d-block w-100" src="{{ url_for('static', filename='img/slidepic1colorchange).JPG') }}" alt="...">" alt="First slide">
+      <img class="d-block w-100" src="{{ url_for('static', filename='slideimg/img1production.JPG') }}" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Second slide">
+      <img class="d-block w-100" src="{{ url_for('static', filename='slideimg/img2production.JPG') }}" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
+      <img class="d-block w-100" src="{{ url_for('static', filename='slideimg/img3production.JPG') }}" alt="Third slide">
     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ url_for('static', filename='slideimg/img4production.JPG') }}" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ url_for('static', filename='slideimg/img5production.JPG') }}" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ url_for('static', filename='slideimg/img6production.JPG') }}" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ url_for('static', filename='slideimg/img7production.JPG') }}" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ url_for('static', filename='slideimg/img8production.JPG') }}" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ url_for('static', filename='slideimg/img9production.JPG') }}" alt="Third slide">
+    </div>
+
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -40,19 +68,11 @@ referrerpolicy="no-referrer" /> -->
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+  
 </div>
 
 
 {% endblock %}
 
 {% block script %}
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" 
-integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 
-crossorigin="anonymous">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"
-integrity="sha512-vO2Z2TMWFHV2Qyc0QaK4khEDOClJqw5RDzhsRT7CojWdo5aA2KFp5ry+dTGETq9fWYVg8NEz0/o6n2x1ArFI3w=="
-crossorigin="anonymous"
-referrerpolicy="no-referrer">
-</script>
 {% endblock %}

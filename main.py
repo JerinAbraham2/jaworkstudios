@@ -22,7 +22,7 @@ def before_request():
 #https://www.reddit.com/r/flask/comments/948nrj/debug_mode_off/:
 #
 
-
+#if you want to deploy I think you need to push in the enviroment (as well as maybe run the main in the enviroment for proper debug (maybe))
 
 
 
