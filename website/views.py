@@ -22,4 +22,7 @@ def usefulutil():
 def unavailable():
     return render_template('unavailable.html', user=current_user)
 
+@views.route('/game')
+def game():
+    return render_template('game.html', user=current_user)
 

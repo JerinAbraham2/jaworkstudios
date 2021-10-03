@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>platform</title> 
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block main %}
+    <!-- Hero section -->
+    <div class="hero" id="home">
+        <div class="hero__container">
+            <h1 class="hero__heading">Welcome to
+                <span>
+                    Platformer game
+                </span>
+            </h1>
+        </div>
+    </div>
+    <div id="game-area"></div>
+
+
+{% endblock %}
+
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser-arcade-physics.min.js"></script> 
+<script src="{{ url_for('static', filename='game.js') }}"></script>
+{% endblock %}

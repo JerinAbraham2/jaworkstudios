@@ -22,6 +22,15 @@ be VERY careful with copy and paste (make sure to have copyq on)
 
 you often miss things even when copying
 
+loading things in a static folder: do /static/ etc
+//preload assets
+this.load.image('sky', '/static/assets/sky.png');
+this.load.image('level', '/static/assets/platform.png');
+this.load.image('star', '/static/assets/star.png');
+this.load.spritesheet('player', '/static/assets/dude.png', { frameWidth: 32, frameHeight: 48 });
+
+
+
     font-family: TangoSans;
     /* Jaworks color palette
 white: white
