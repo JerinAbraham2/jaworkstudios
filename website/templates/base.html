@@ -21,7 +21,7 @@
     <!-- Navbar selection -->
     <nav class="navbar">
         <div class="navbar__container">
-            <a href="/" id="navbar__logo">JAWORKS</a>
+            <a href="/" id="navbar__logo">JAWORKS STUDIOS</a>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -29,18 +29,19 @@
             </div>
             <ul class="navbar__menu">
                 {% if user.is_authenticated %}
+                <!-- the /#home the / is to take you to the homepage if you aren't already and the # to that section of the page -->
                 <li class="navbar__item">
-                    <a href="#home" class="navbar__links" id="home-page">
+                    <a href="/#home" class="navbar__links" id="home-page">
                     Home
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="#about" class="navbar__links" id="about-page">
+                    <a href="/#about" class="navbar__links" id="about-page">
                     About
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="#services" class="navbar__links" id="services-page">
+                    <a href="/#services" class="navbar__links" id="services-page">
                     Services
                     </a>
                 </li>
