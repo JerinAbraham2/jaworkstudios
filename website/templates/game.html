@@ -9,25 +9,27 @@
 
 {% block main %}
     <!-- Hero section -->
-    <div class="hero" id="home">
-        <div class="hero__container">
-            <h1 class="hero__heading">Welcome to
-                <span>
-                    Platformer game
-                </span>
-            </h1>
-        </div>
+<div class="hero" id="home">
+    <div class="hero__container">
+        <h1 class="hero__heading">Welcome to
+            <span>
+                Platformer game
+            </span>
+        </h1>
     </div>
+        <!-- game -->
     <div id="game-area"></div>
-    <div class="hero__heading">
-        <h2 id="game-area">This game was made as a tutorial for phaser game:</h2>
-        <h3 id="game-area">Tutorial here:</h3>
-        <h3 id="game-area">https://phaser.io/tutorials/making-your-first-phaser-3-game/part1</h3>
-    </div>
+        <!-- information -->
+        <div class="container mt-5" id="gameDescription">
+            <h2>This game was made as a tutorial for phaser game:</h2>
+            <h3>Tutorial here:</h3>
+            <h3>https://phaser.io/tutorials/making-your-first-phaser-3-game/part1</h3>
+        </div>
+</div>
 {% endblock %}
 
 
 {% block script %}
 <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser-arcade-physics.min.js"></script> 
-<script src="{{ url_for('static', filename='game.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/game.js') }}"></script>
 {% endblock %}

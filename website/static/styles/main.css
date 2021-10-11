@@ -16,7 +16,8 @@ slate gray: #708090
 
 @font-face {
     font-family: TangoSans;
-    src: url(fonts/TangoSans-1Ge1e.ttf);
+    /* go up a level one means .. */
+    src: url(../fonts/TangoSans-1Ge1e.ttf);
 }
 *{
     box-sizing: border-box;
@@ -51,7 +52,10 @@ img{
     padding-bottom: 200px;
     height: 100%;
 }
+#gameDescription{
+    color: white;
 
+}
 
 /* personal slideshow */
 #width{
