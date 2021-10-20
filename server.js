@@ -6,7 +6,7 @@ const http = require("http").Server(app);
 
 const io = require("socket.io")(http); //io is now going to listen on the server and wait for the client to connect, then setup a socket connection
 
-app.get("/", (req, res) => res.sendFile(__dirname + "/index.html"));
+app.get("/", (req, res) => res.sendFile(__dirname + "/home.html"));
 
 http.listen(port, function() {
     console.log(`listen on ${port}`);
