@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block style %}
+<script
+src="https://cdn.socket.io/4.3.2/socket.io.min.js"
+integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
+crossorigin="anonymous"
+></script>
 {% endblock %}
 
 {% block main %}
@@ -78,7 +83,18 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div id="chat">
+          <div id="output"></div>
+          <div id="answer"></div>
+        </div>
+        <input id="name" type="text" placeholder="Name" />
+        <input id="message" type=“text" placeholder="Message" />
+        <button id="send" type="submit" name="action">Send</button>
+      </div>
 {% endblock %}
 
 {% block script %}
+<script src="{{ url_for('static', filename='scripts/client.js') }}"></script>
 {% endblock %}
