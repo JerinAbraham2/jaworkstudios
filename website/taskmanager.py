@@ -9,7 +9,6 @@ import json
 
 taskmanager = Blueprint('taskmanager', __name__)
 
-
 @taskmanager.route('/tasklist', methods=['GET', 'POST'])
 @login_required
 def tasks():
