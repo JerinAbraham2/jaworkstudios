@@ -6,8 +6,8 @@ import os
 app = create_app()
 
 #I think turn this off when deploying
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == "__index__":
+    app.run(debug=False)
 
 #redirects http:// to https://
 @app.before_request
